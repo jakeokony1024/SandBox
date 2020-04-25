@@ -11,6 +11,7 @@ function Jumbotron({ children }) {
 			}}
 			className="jumbotron">
 			{children}
+			<h1>Hello World!</h1>
 		</div>
 	);
 }
