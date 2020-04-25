@@ -32,3 +32,5 @@ db.Item.remove({})
 		console.error(err);
 		process.exit(1);
 	});
+
+module.exports = userSeed;
