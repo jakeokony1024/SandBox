@@ -7,11 +7,11 @@ function Nav() {
 				Home
 			</a>
             <br></br>
-            <a className="navbar-brand" href="/">
+            <a className="navbar-brand" href="/pages/profilePage">
 				Profile Page
 			</a>
             <br></br>
-            <a className="navbar-brand" href="/">
+            <a className="navbar-brand" href="/pages/gamesPage">
 				Games
 			</a>
 		</nav>
