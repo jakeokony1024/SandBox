@@ -40,7 +40,7 @@ const Item = () => {
                     <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
                         OMG it's a Monkey!
           </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="textSecondary" component="h1">
                         Monkey is a common name that may refer to groups or species of mammals.
                         The term is applied descriptively to groups of primates.
           </Typography>

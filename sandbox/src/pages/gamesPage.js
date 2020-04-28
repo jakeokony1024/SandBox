@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import api from "../utils/api";
 import {Container, Row, Col} from "../components/Grid";
-import Navbar from "../components/Navbar"
+import Nav from "../components/Navbar"
 
 class GameSearch extends Component {
     state = {
@@ -10,7 +10,7 @@ class GameSearch extends Component {
 
     componentDidMount() {
         api.getGameSearch()
-            .then(res.this.setState({ savedGames: res.data }))
+            .then(this.setState({ savedGames: this.data }))
             .catch (err => console.log(err))
     }
     render() {
@@ -18,7 +18,7 @@ class GameSearch extends Component {
             <Container>
                 <Row>
                     <Col size = "md-12">
-                        <Navbar/>
+                        
                     </Col>
                 </Row>
             </Container>
