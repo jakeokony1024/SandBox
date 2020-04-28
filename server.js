@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const routes = require("./routes");
+const axios = require("axios");
+const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3000;
-require('dotenv').config()
+require('dotenv').config();
 
-// Define middleware here
+// Define middleware heres
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -15,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-// app.use(routes);
+app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
