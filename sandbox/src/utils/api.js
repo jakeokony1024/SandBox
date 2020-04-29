@@ -1,5 +1,5 @@
 import axios from "axios";
-// import {IGDB_KEY} from "react-native-dotenv";
+import {IGDB_KEY} from "react-native-dotenv";
 
 export default {
 
@@ -9,8 +9,9 @@ export default {
             url: "https://api-v3.igdb.com/games",
             method: 'GET',
             headers: {
+                'Access-Control-Allow-Origin': 'http://localhost:3000',
                 'Accept': 'application/json',
-                'user-key': process.env.IGDB_KEY
+                'user-key': IGDB_KEY
             },
             data: `'fields name; search "${searchbar}"; limit 15;'`
 	    })

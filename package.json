@@ -3,10 +3,29 @@
   "version": "1.0.0",
   "description": "gamer app",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+  "dependencies": {
+    "@material-ui/core": "^4.9.11",
+    "@material-ui/icons": "^4.9.1",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "material-ui": "^0.20.2",
+    "mongoose": "^5.9.10",
+    "react-router-dom": "^5.1.2",
+    "router": "^1.3.5",
+    "routes": "^2.1.0"
   },
+  "devDependencies": {},
+	"scripts": {
+		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+		"start:prod": "node server.js",
+		"start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+		"client": "cd client && npm run start",
+		"seed": "node scripts/DBseeds.js",
+		"install": "cd client && npm install",
+		"build": "cd client && npm run build",
+		"heroku-postbuild": "npm run build"
+	},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jakeokony1024/SandBox.git"
