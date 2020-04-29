@@ -21,5 +21,9 @@ export default {
             .catch(err => {
                 console.error(err);
             });
+    },
+
+    getUsers: function() {
+        return axios.get("/api/users");
     }
 }
