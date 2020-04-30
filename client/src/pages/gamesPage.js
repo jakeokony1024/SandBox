@@ -13,13 +13,13 @@ class GameSearch extends Component {
     }
 
     componentDidMount() {
-        api.getGameSearch()
+        api.getUsers()
             .then(data => this.setState({ savedGames: data }))
             .catch (err => console.log(err))
     }
     render() {
 
-        console.log(this.state.savedGames);
+        
         return (
             <Container fluid>
                 <Jumbotron><Nav/></Jumbotron>
