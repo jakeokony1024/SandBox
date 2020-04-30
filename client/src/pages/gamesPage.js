@@ -8,7 +8,7 @@ class GameSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            savedGames: [],
+            savedGames: [{}],
         }
     }
 
@@ -21,7 +21,7 @@ class GameSearch extends Component {
 
         console.log(this.state.savedGames);
         return (
-            <Container>
+            <Container fluid>
                 <Jumbotron><Nav/></Jumbotron>
                 <Row>
                     <Col size = "md-12">
