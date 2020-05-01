@@ -10,13 +10,15 @@ mongoose.connect(
 
 const userSeed = [
 	{
-		note: "Buy milk",
-		author: "Nicole",
+		username: "jakeokony",
+		password: "password",
+		email: "jakeokony@gmail.com",
 		date: new Date(Date.now()),
 	},
 	{
-		note: "Walk the dog",
-		author: "Sam",
+		username: "saramay",
+		password: "password12",
+		email: "saramay@gmail.com",
 		date: new Date(Date.now()),
 	},
 ];
@@ -30,3 +32,5 @@ db.Item.remove({})
 		console.error(err);
 		process.exit(1);
 	});
+
+module.exports = userSeed;
