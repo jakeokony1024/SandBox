@@ -10,15 +10,21 @@ mongoose.connect(
 
 const userSeed = [
 	{
+		firstName: "jacob",
+		lastName: "okony",
 		username: "jakeokony",
 		password: "password",
 		email: "jakeokony@gmail.com",
+		mainPlatform: "Playstation-4",
 		date: new Date(Date.now()),
 	},
 	{
+		firstName: "sara",
+		lastName: "johns",
 		username: "saramay",
-		password: "password12",
+		password: "password1",
 		email: "saramay@gmail.com",
+		mainPlatform: "Playstation-4",
 		date: new Date(Date.now()),
 	},
 ];

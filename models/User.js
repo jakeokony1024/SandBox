@@ -3,6 +3,14 @@ const Schema = mongoose.Schema;
 
 //Generating Schema
 const userSchema = new Schema({
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
 	username: { 
         type: String, 
         required: true, 
@@ -10,11 +18,14 @@ const userSchema = new Schema({
 	password: { 
         type: String, 
         required: true, 
-        minlength: [10, "Password not long enough..."],
     },
     email: {
         type: String, 
         required: true, 
+    },
+    mainPlatform: {
+        type: String,
+        required: true
     },
 	date: { 
         type: Date, 

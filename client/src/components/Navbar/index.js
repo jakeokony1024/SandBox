@@ -18,6 +18,11 @@ function Nav() {
 					<a className="navbar-brand" href="/pages/gamesPage">
 						Games
 					</a>
+					<div className = "col-4">
+					<a className="navbar-brand" href="/pages/signUpPage">
+						Create Accout
+					</a>
+				</div>
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route,Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import gamesPage from "./pages/gamesPage";
 import profilePage from "./pages/profilePage";
+import SignUpPage from './pages/signUpPage';
 // import { Chat, Channel, ChannelHeader, Thread, Window } from 'stream-chat-react';
 // import { MessageList, MessageInput } from 'stream-chat-react';
 // import { StreamChat } from 'stream-chat';
@@ -34,16 +35,17 @@ function App() {
           <Route exact path = "/" component={gamesPage} />
           <Route exact path = "/pages/profilePage" component={profilePage} />
           <Route exact path = "/pages/gamesPage" component={gamesPage} />
-          {/* <Chat client={chatClient} theme={'messaging light'}>
-            <Channel channel={channel}>
-              <Window>
-              <ChannelHeader />
-              <MessageList />
-              <MessageInput />
-              </Window>
-              <Thread />
-            </Channel>
-          </Chat> */}
+          <Route exact path = "/pages/signUpPage" component={SignUpPage}/>
+           {/* <Chat client={chatClient} theme={'messaging light'}>
+          //   <Channel channel={channel}>
+          //     <Window>
+          //     <ChannelHeader />
+          //     <MessageList />
+          //     <MessageInput />
+          //     </Window>
+          //     <Thread />
+          //   </Channel>
+          // </Chat> */}
       </div>
     </Router>
   );
