@@ -7,11 +7,14 @@ import {List, ListItem} from "../components/List";
 import { Link } from "react-router-dom";
 
 class Profile extends Component {
-	state = {
-        users: [],
-
-	};
-
+    constructor(props){
+        super(props);
+        
+        this.state = {
+            users: [],
+            
+        }
+    }
 	componentDidMount() {
 		this.loadUsers();
 	}
@@ -29,9 +32,8 @@ class Profile extends Component {
     render() {
         console.log(this.state.users)
         return (
-            <Container>
-                <Jumbotron><Nav/>
-                All Users</Jumbotron>
+            <Container fluid>
+                <Jumbotron><Nav/> <h1>List of Users </h1> </Jumbotron>
                 <Row>
                     <Col size = "md-0">
                         {this.state.users.length ? (
@@ -41,7 +43,6 @@ class Profile extends Component {
                                         <Link to={"/users/" + user._id}/> 
                                         <strong>{user.username}</strong>
                                     </ListItem>
-                                    
                                 ))}
                             </List>
                         ) : (

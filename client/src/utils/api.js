@@ -1,27 +1,25 @@
 import axios from "axios";
-import {IGDB_KEY} from "react-native-dotenv";
 require('dotenv').config();
-
 export default {
 
     getGameSearch: function() {
-    // let searchbar = process.argv[2];
-	    return axios({ 
-            url: "https://api-v3.igdb.com/games",
-            method: 'GET',
-            headers: {
-                'Access-Control-Allow-Origin': 'http://localhost:3002',
-                'Accept': 'application/json',
-                'user-key': IGDB_KEY
-            },
-            data: "fields *; search 'sonic the hedgehog'; limit 50;"
-	    })
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(err => {
-                console.error(err);
-            });
+        console.log(process.env);
+        console.log(process.env.REACT_APP_RAWG_KEY);
+            return axios({
+                "method":"GET",
+                "url":"https://rawg-video-games-database.p.rapidapi.com/games",
+                "headers":{
+                "content-type":"application/octet-stream",
+                "x-rapidapi-host":"rawg-video-games-database.p.rapidapi.com",
+                "x-rapidapi-key":process.env.REACT_APP_RAWG_KEY
+                }
+                })
+                .then((response)=>{
+                    console.log(response)
+                })
+                .catch((error)=>{
+                    console.log(error)
+                })
     },
 
     getUsers: function() {
@@ -30,5 +28,9 @@ export default {
 
     getUser: function(id) {
         return axios.get("/api/users" + id)
+    },
+
+    addUser: function(newUserData) {
+        return axios.post("/api/users", + newUserData)
     }
 }
