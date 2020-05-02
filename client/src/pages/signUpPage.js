@@ -16,6 +16,7 @@ class SignUpPage extends Component {
             userName: "",
             password: "",
             mainPlatform: "",
+            gamerTag: "",
             redirect: null
         }
     }
@@ -38,19 +39,26 @@ class SignUpPage extends Component {
                 } else if (this.state.password.length < 10) {
                     alert(`Password must be 10 characters long ${this.state.firstName}`)
                 } else {
-                    alert(` Welcome to SandBox ${this.state.userName}`)
-                    api.addUser({
-                            firstName: this.state.firstName,
-                            lastName: this.state.lastName,
-                            email: this.state.email,
-                            userName: this.state.userName,
-                            password: this.state.password,
-                            mainPlatform: this.state.mainPlatform
-                        }) .then(console.log("User Added"))
-                            .catch((error) => console.log(error))
+                    alert(` Welcome to SandBox ${this.state.userName}!`)
+                    this.apiCall();
                     this.setState({ redirect: "/pages/profilePage"})
                 }
-                
+            }
+
+            apiCall = () => {
+               let userObject = {
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                email: this.state.email,
+                username: this.state.userName,
+                password: this.state.password,
+                mainPlatform: this.state.mainPlatform,
+                gamerTag: this.state.gamerTag
+            } 
+
+               api.addUser(userObject) 
+               .then(res =>  console.log(res))
+                .catch((error) => console.log(error))
             }
 
     render() {
@@ -123,7 +131,16 @@ class SignUpPage extends Component {
                         name = "mainPlatform" 
                         onChange = {this.handleInputChange}
                         type = "text"
-                        placeholder = "Playstation, Xbox, or P.C."
+                        placeholder = "Preferred Game Console"
+                    />
+                    </Col>
+                    <Col size = "md-10">
+                    <input 
+                        value = {this.state.gamerTag} 
+                        name = "gamerTag" 
+                        onChange = {this.handleInputChange}
+                        type = "text"
+                        placeholder = "Main Gamer Tag"
                     />
                     </Col>
                     < button onClick = {this.handleFormSubmit}>Create Account</button>

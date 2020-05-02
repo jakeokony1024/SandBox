@@ -16,6 +16,7 @@ const userSeed = [
 		password: "password",
 		email: "jakeokony@gmail.com",
 		mainPlatform: "Playstation-4",
+		gamerTag: "jakezilla1024",
 		date: new Date(Date.now()),
 	},
 	{
@@ -25,6 +26,7 @@ const userSeed = [
 		password: "password1",
 		email: "saramay@gmail.com",
 		mainPlatform: "Playstation-4",
+		gamerTag: "saramay1062",
 		date: new Date(Date.now()),
 	},
 ];

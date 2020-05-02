@@ -53,10 +53,8 @@ class GameSearch extends Component {
                 </Row>
                 
                 <Row>
-                    <Col size = "md-12">
-                        {
-                            this.state.savedGames.length > 0 ? (<h1>Data is loaded.</h1>) : (<h1>Loading Data...</h1>)
-                        }
+                    <Col size = "md-12"> 
+                    
                     </Col>
                 </Row>
             </Container>

@@ -36,7 +36,7 @@ function App() {
           <Route exact path = "/pages/profilePage" component={profilePage} />
           <Route exact path = "/pages/gamesPage" component={gamesPage} />
           <Route exact path = "/pages/signUpPage" component={SignUpPage}/>
-           {/* <Chat client={chatClient} theme={'messaging light'}>
+          {/* <Chat client={chatClient} theme={'messaging light'}>
           //   <Channel channel={channel}>
           //     <Window>
           //     <ChannelHeader />

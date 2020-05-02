@@ -11,6 +11,6 @@ export default {
     },
 
     addUser: function(newUserData) {
-        return axios.post("/api/users", + newUserData)
+        return axios.post("/api/users", newUserData)
     }
 }

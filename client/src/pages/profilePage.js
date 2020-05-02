@@ -33,7 +33,8 @@ class Profile extends Component {
         console.log(this.state.users)
         return (
             <Container fluid>
-                <Jumbotron><Nav/> <h1>List of Users </h1> </Jumbotron>
+                <Nav/>
+                <Jumbotron> <h1>List of Users </h1> </Jumbotron>
                 <Row>
                     <Col size = "md-0">
                         {this.state.users.length ? (
@@ -41,7 +42,7 @@ class Profile extends Component {
                                 {this.state.users.map((user) => (
                                     <ListItem key={user._id}>
                                         <Link to={"/users/" + user._id}/> 
-                                        <strong>{user.username}</strong>
+                                        <strong>{"SandBox Username: " + user.username}</strong>
                                     </ListItem>
                                 ))}
                             </List>
