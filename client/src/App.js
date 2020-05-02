@@ -1,54 +1,60 @@
 import React from 'react';
+import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm } from 'react-activity-feed';
+import 'react-activity-feed/dist/index.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import gamesPage from "./pages/gamesPage";
 import profilePage from "./pages/profilePage";
 import SignUpPage from './pages/signUpPage';
-// import { Chat, Channel, ChannelHeader, Thread, Window } from 'stream-chat-react';
-// import { MessageList, MessageInput } from 'stream-chat-react';
-// import { StreamChat } from 'stream-chat';
-require('dotenv').config();
+import { Container, Row, Col } from './components/Grid';
 
-
-// const chatClient = new StreamChat(process.env.REACT_APP_CHAT_KEY);
-// const userToken = process.env.REACT_APP_CHAT_SECRET;
-
-// chatClient.setUser(
-//     {
-//         id: 'orange-leaf-8',
-//         name: 'Orange leaf',
-//         image: 'https://getstream.io/random_svg/?id=orange-leaf-8&name=Orange+leaf'
-//     },
-//     userToken,
-// );
-
-// const channel = chatClient.channel('messaging', 'godevs', {
-//   // add as many custom fields as you'd like
-//     image: 'https://cdn.chrisshort.net/testing-certificate-chains-in-go/GOPHER_MIC_DROP.png',
-//     name: 'Talk about Go',
-// });
-
-
-function App() {
-  return(
-    <Router>
-      <div>
-          <Route exact path = "/" component={gamesPage} />
+class App extends React.Component {
+  render() {
+    return(
+      <Container>
+      <Router>
+        <div>
+      <Route exact path = "/" component={gamesPage} />
           <Route exact path = "/pages/profilePage" component={profilePage} />
           <Route exact path = "/pages/gamesPage" component={gamesPage} />
           <Route exact path = "/pages/signUpPage" component={SignUpPage}/>
-          {/* <Chat client={chatClient} theme={'messaging light'}>
-          //   <Channel channel={channel}>
-          //     <Window>
-          //     <ChannelHeader />
-          //     <MessageList />
-          //     <MessageInput />
-          //     </Window>
-          //     <Thread />
-          //   </Channel>
-          // </Chat> */}
+      
+        <Row>
+          <Col size = "md-4">
+          <StreamApp
+        apiKey="2jatkyzuu734"
+        appId="77994"
+        token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidXNlci1vbmUifQ.RDAS7w0MhV2Nkliac3pZ9ZWZtfaivQipDvRXANqiwdI"
+      >
+        <NotificationDropdown notify />
+        <StatusUpdateForm
+          feedGroup="timeline"
+          userId="user-one" />
+        <FlatFeed
+          options={ {reactions: { recent: true } } }
+          notify
+          Activity={(props) =>
+              <Activity {...props}
+                Footer={() => (
+                  <div style={ {padding: '8px 16px'} }>
+                    <LikeButton {...props} />
+                    <CommentField
+                      activity={props.activity}
+                      onAddReaction={props.onAddReaction} />
+                    <CommentList activityId={props.activity.id} />
+                  </div>
+                )}
+              />
+            }
+          />
+      </StreamApp>
+          </Col>
+        </Row>
+      
       </div>
-    </Router>
-  );
-};
-export default App;
+      </Router>
+      </Container>
+    );
+  }
+}
 
+export default App;

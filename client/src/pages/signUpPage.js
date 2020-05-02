@@ -46,7 +46,7 @@ class SignUpPage extends Component {
             }
 
             apiCall = () => {
-               let userObject = {
+                let userObject = {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 email: this.state.email,
@@ -56,8 +56,8 @@ class SignUpPage extends Component {
                 gamerTag: this.state.gamerTag
             } 
 
-               api.addUser(userObject) 
-               .then(res =>  console.log(res))
+                api.addUser(userObject) 
+                .then(res =>  console.log(res))
                 .catch((error) => console.log(error))
             }
 

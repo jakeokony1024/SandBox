@@ -1,5 +1,6 @@
 import axios from "axios";
 require('dotenv').config();
+
 export default {
 
     getUsers: function() {
@@ -13,4 +14,6 @@ export default {
     addUser: function(newUserData) {
         return axios.post("/api/users", newUserData)
     }
+
+    
 }
