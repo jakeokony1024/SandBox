@@ -10,17 +10,17 @@ function Nav() {
 					</a>
 				</div>
 				<div className = "col-3">
-					<a className="navbar-brand" href="/pages/profilePage">
+					<a className="navbar-brand" href="/profilePage">
 						Profile Page
 					</a>
 				</div>
 				<div className = "col-3">
-					<a className="navbar-brand" href="/pages/gamesPage">
+					<a className="navbar-brand" href="/gamesPage">
 						Games
 					</a>
 				</div>
 				<div className = "col-3">
-					<a className="navbar-brand" href="/pages/signUpPage">
+					<a className="navbar-brand" href="/signUpPage">
 						Create Accout
 					</a>
 				</div>

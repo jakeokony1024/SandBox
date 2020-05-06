@@ -3,6 +3,7 @@ const userController = require("../../controllers/index");
 
 router.route("/").get(userController.findAll).post(userController.create);
 
+
 router
     .route("/:id")
     .get(userController.findById)

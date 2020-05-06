@@ -7,6 +7,7 @@ import {List, ListItem} from "../components/List";
 import SearchForm from "../components/SearchForm";
 import axios from "axios";
 
+
 class GamePage extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +15,8 @@ class GamePage extends Component {
             search: "",
             savedGames: [{}],
             name: "",
-            background_image: ""
+            background_image: "",
+            searchResult: []
 
         }
     }
@@ -55,14 +57,21 @@ class GamePage extends Component {
             }
             })
             .then((response)=>{
-            console.log(response.data)
+            let searchedGame = [response.data.results[0].name]
+            this.setState({searchResult: searchedGame})
+            console.log(this.state.searchResult)
             })
             .catch((error)=>{
             console.log(error)
             })
     }
+
+    handleButtonCLick = event => {
+        event.preventDefault();
+        let gameList = this.state.searchResult;
+        console.log(gameList)
+    }
     render() {
-        console.log(this.state.savedGames)
         return (
             <Container fluid>
                 <Row>
@@ -84,12 +93,33 @@ class GamePage extends Component {
                         </Col>
                     </Row>
                 </Container>
+
+                {/* <Container>
+                    <Row>
+                        <Col size = "md-12">
+                        <ListItem>
+                                <strong>
+                                    Game: {this.state.searchResult}
+                                </strong>
+                                <Button onClick={this.handleButtonCLick}>Add Game</Button>
+                            </ListItem>
+                        </Col>
+                    </Row>
+                </Container> */}
                 
                 <Row>
                     <Col size = "md-12"> 
                     {this.state.savedGames.length ? (
                         <List>
+                            <ListItem>
+                                <strong>
+                                    Game: {this.state.searchResult}
+                                </strong>
+                                <br></br>
+                                <button onClick = {this.handleButtonCLick}>Save Game</button>
+                            </ListItem>
                             {this.state.savedGames.map((game) => (
+                                
                                 <ListItem key = {game._id}>
                                     <Link to = { '/games/' + game._id}>
                                         <strong>

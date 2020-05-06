@@ -23,7 +23,16 @@ export default function ProductSection() {
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>Sandbox</h2>
           <h5 className={classes.description}>
-            Rememeber the days of old when you'd join your friends in the sandbox to play with cars, trucks, shovels and dirt? We do too. Now thanks to social media and overprotective parents, we all have social anxiety and cannot for 5 minutes talk to someone new. Here at SandBox, we take that trouble right out of your hands. Based on your 5 favorite video games, we auto-message 100 gamers that you're a new user and a little about yourself. Then you can chat, befriend and game together!
+            Rememeber the days of old when you'd join your 
+            friends in the sandbox to play with cars, trucks, 
+            shovels and dirt? We do too. Now thanks to social media 
+            and overprotective parents, we all have social anxiety 
+            and cannot for 5 minutes talk to someone new. 
+            Here at SandBox, we take that trouble right out 
+            of your hands. Based on your 5 favorite video games, 
+            we auto-message 100 gamers that you're a new user and 
+            a little about yourself. Then you can chat, befriend 
+            and game together!
           </h5>
         </GridItem>
       </GridContainer>
