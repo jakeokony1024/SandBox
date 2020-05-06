@@ -94,30 +94,21 @@ class GamePage extends Component {
                     </Row>
                 </Container>
 
-                {/* <Container>
-                    <Row>
-                        <Col size = "md-12">
-                        <ListItem>
-                                <strong>
-                                    Game: {this.state.searchResult}
-                                </strong>
-                                <Button onClick={this.handleButtonCLick}>Add Game</Button>
-                            </ListItem>
-                        </Col>
-                    </Row>
-                </Container> */}
-                
-                <Row>
-                    <Col size = "md-12"> 
-                    {this.state.savedGames.length ? (
-                        <List>
-                            <ListItem>
+                <div class= "container"> 
+                    <div class = "row">
+                        <div class = "col-12" >
                                 <strong>
                                     Game: {this.state.searchResult}
                                 </strong>
                                 <br></br>
                                 <button onClick = {this.handleButtonCLick}>Save Game</button>
-                            </ListItem>
+                        </div>
+                    </div>
+                </div>
+                <Row>
+                    <Col size = "md-12"> 
+                    {this.state.savedGames.length ? (
+                        <List>
                             {this.state.savedGames.map((game) => (
                                 
                                 <ListItem key = {game._id}>

@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 // import { Router, Route, Switch } from "react-router-dom";
 import App from "./App"
 
-// import "assets/scss/material-kit-react.scss?v=1.8.0";
+import "assets/scss/material-kit-react.scss?v=1.8.0";
 
 // // pages for this product
 // import Components from "views/Components/Components.js";
