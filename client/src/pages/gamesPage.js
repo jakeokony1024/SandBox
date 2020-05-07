@@ -11,9 +11,9 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import Card from "../components/Card/Card";
 // import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
-import { makeStyles } from "@material-ui/core/styles";
-import { height, width } from "@material-ui/system";
-import styles from "assets/jss/material-kit-react/views/loginPage.js";
+// import { makeStyles } from "@material-ui/core/styles";
+// import { height, width } from "@material-ui/system";
+// import styles from "assets/jss/material-kit-react/views/loginPage.js";
 
 const dashboardRoutes = [];
 
@@ -31,7 +31,6 @@ class GamePage extends Component {
 
         }
     }
-
     // componentDidMount() {
     //     return axios({
     //     "method":"GET",
@@ -68,11 +67,14 @@ class GamePage extends Component {
             }
             })
             .then((response)=>{
+                console.log(response.data.results)
+                console.log(response.data.results.platforms)
             let searchedGame = response.data.results[0].name
             let searchedGameImg = response.data.results[0].background_image
             this.setState({
                 searchResult: searchedGame,
-                background_image: searchedGameImg
+                background_image: searchedGameImg,
+                placeholder: ""
             })
             })
             .catch((error)=>{
@@ -83,15 +85,11 @@ class GamePage extends Component {
     handleButtonCLick = event => {
         event.preventDefault();
         let gameList = this.state.searchResult;
-        console.log(gameList, this.state.background_image)
+        console.log(gameList)
+        
+
     }
-    render(props) {
-        // const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-        // setTimeout(function () {
-        //     setCardAnimation("");
-        // }, 700);
-        // const classes = useStyles();
-        // const { ...rest } = props;
+    render() {
         return (
             <Container fluid>
                 <Header
@@ -122,7 +120,7 @@ class GamePage extends Component {
                 <Row>
                     <Col size = "md-5">
                     <Card>
-                        <CardHeader color="transparent" >
+                        <CardHeader color="transparent" style={{textAlign: "center"}}>
                         <h3>Game: {this.state.searchResult}</h3>
                         </CardHeader>
                             <img 

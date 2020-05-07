@@ -23,7 +23,7 @@ class App extends React.Component {
           <Route exact path = "/signUpPage" component={SignUpPage}/>
       
         <Row>
-          <Col size = "md-12">
+          <Col size = "md-4">
           <StreamApp
         apiKey= {process.env.REACT_APP_CHAT_KEY}
         appId={process.env.REACT_APP_CHAT_ID}
