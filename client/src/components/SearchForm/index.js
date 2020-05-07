@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Button from "components/CustomButtons/Button.js";
 
 const SearchForm = props => {
     return (
@@ -15,9 +16,9 @@ const SearchForm = props => {
                     onChange={props.handleInputChange}
                 />
             </div>
-            <button type="submit" className="submitBtn btn btn-primary" onClick={props.handleFormSubmit}>
+            <Button type="submit" className="submitBtn btn btn-primary" onClick={props.handleFormSubmit}>
                 Submit
-            </button>
+            </Button>
         </form>
     )
 }

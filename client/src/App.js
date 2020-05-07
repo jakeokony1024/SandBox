@@ -23,11 +23,11 @@ class App extends React.Component {
           <Route exact path = "/signUpPage" component={SignUpPage}/>
       
         <Row>
-          <Col size = "md-4">
+          <Col size = "md-12">
           <StreamApp
-        apiKey="2jatkyzuu734"
-        appId="77994"
-        token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidXNlci1vbmUifQ.RDAS7w0MhV2Nkliac3pZ9ZWZtfaivQipDvRXANqiwdI"
+        apiKey= {process.env.REACT_APP_CHAT_KEY}
+        appId={process.env.REACT_APP_CHAT_ID}
+        token={process.env.REACT_APP_CHAT_TOKEN}
       >
         <NotificationDropdown notify />
         <StatusUpdateForm

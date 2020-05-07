@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import api from "../utils/api";
 import {Container, Row, Col} from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import Nav from "../components/Navbar"
 import { Redirect } from "react-router-dom";
+import Header from "components/Header/Header.js";
+import HeaderLinks from "components/Header/HeaderLinks.js";
+
+const dashboardRoutes = ["http://localhost:3000/"];
 
 class SignUpPage extends Component {
     constructor(props) {
@@ -68,11 +71,17 @@ class SignUpPage extends Component {
         return (
             <div>
                 <Container fluid>
-                <Row>
-                    <Col size = "md-12">
-                        <Nav/>
-                    </Col>
-                </Row>
+                <Header
+                color="transparent"
+                routes={dashboardRoutes}
+                brand="Sandbox"
+                rightLinks={<HeaderLinks />}
+                fixed
+                changeColorOnScroll={{
+                height: 400,
+                color: "white"
+                }}
+                />
                 <Row>
                     <Col size = "12">
                         <Jumbotron> <h1>Welcome to SandBox, </h1><h1> Create an Accout below!</h1></Jumbotron>
