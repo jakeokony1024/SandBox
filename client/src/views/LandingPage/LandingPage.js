@@ -57,18 +57,18 @@ export default function LandingPage(props) {
               <Button
                 color="danger"
                 size="lg"
-                href="http://localhost:3000/login-page"
+                href="http://localhost:3000/LoginPage"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Signup Here
+                Login Here
               </Button>
 
 
               <Button
                 color="danger"
                 size="lg"
-                href="http://localhost:3000/profile-page"
+                href="http://localhost:3000/ProfilePage"
                 target="_blank"
                 rel="noopener noreferrer"
               >

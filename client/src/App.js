@@ -3,12 +3,12 @@ import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, Commen
 import "react-activity-feed/dist/index.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import gamesPage from "./pages/gamesPage";
-import profilePage from "./pages/profilePage";
+// import profilePage from "./pages/profilePage";
 import SignUpPage from "./pages/signUpPage";
-// import LoginPage from "./views/LoginPage/LoginPage"
+import LoginPage from "./views/LoginPage/LoginPage"
 import { Container, Row, Col } from './components/Grid';
-// import ProfilePage from 'views/ProfilePage/ProfilePage';
-// import LandingPage from 'views/LandingPage/LandingPage';
+import ProfilePage from 'views/ProfilePage/ProfilePage';
+import LandingPage from 'views/LandingPage/LandingPage';
 
 class App extends React.Component {
   render() {
@@ -16,9 +16,9 @@ class App extends React.Component {
       <Container>
       <Router>
         <div>
-          <Route exact path = "/" component={gamesPage} />
-          {/* <Route exact path = "/views/LoginPage" component={LoginPage} /> */}
-          <Route exact path = "/profilePage" component={profilePage} />
+          <Route exact path = "/" component={LandingPage} />
+          <Route exact path = "/LoginPage" component={LoginPage} />
+          <Route exact path = "/profilePage" component={ProfilePage} />
           <Route exact path = "/gamesPage" component={gamesPage} />
           <Route exact path = "/signUpPage" component={SignUpPage}/>
       
