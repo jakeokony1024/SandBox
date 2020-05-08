@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 
-const dashboardRoutes = ["http://localhost:3000/"];
+const dashboardRoutes = [];
 
 class SignUpPage extends Component {
     constructor(props) {
@@ -44,7 +44,7 @@ class SignUpPage extends Component {
                 } else {
                     alert(` Welcome to SandBox ${this.state.userName}!`)
                     this.apiCall();
-                    this.setState({ redirect: "/pages/profilePage"})
+                    this.setState({ redirect: "/ProfilePage"})
                 }
             }
 

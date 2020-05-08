@@ -29,4 +29,17 @@ module.exports = {
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.json(err));
 	},
+	getSavedGames: function(req, res){
+		db.Games
+		.find(req.query)
+		.sort({date: -1})
+		.then(dbGameModel => res.json(dbGameModel))
+		.catch(err => res.json(err))
+	}, 
+	postSavedGames: function(req, res){
+		db.Games 
+		.create(req.body)
+		.then((dbGameModel) => res.json(dbGameModel))
+		.catch((err) => res.json(err))	
+	}
 }

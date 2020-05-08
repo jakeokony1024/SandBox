@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const jwt = require("jsonwebtoken");
 require('dotenv').config();
 
 // Define middleware heres
@@ -19,8 +18,6 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 //Creating a Json Web Token
-
-
 
 // Connect to the Mongo DB
 mongoose.connect(
