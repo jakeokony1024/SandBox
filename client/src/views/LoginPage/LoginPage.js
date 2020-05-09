@@ -140,7 +140,14 @@ export default function LoginPage(props) {
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple color="primary" size="lg">
-                      Get started
+                      Login 
+                    </Button>
+                    <Button 
+                    simple color = "primary" 
+                    size = "lg"
+                    href = "/signUpPage"
+                    >
+                      New User? Sign Up Here!
                     </Button>
                   </CardFooter>
                 </form>

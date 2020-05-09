@@ -6,7 +6,11 @@ class Form extends Component {
   state = {
     firstName: "",
     lastName: "",
-    password: ""
+    email: "",
+    userName: "",
+    password: "",
+    mainPlatform: "",
+    gamerTag: "",
   };
 
   handleInputChange = event => {
@@ -67,11 +71,39 @@ class Form extends Component {
             placeholder="Last Name"
           />
           <input
+            value={this.state.email}
+            name="email"
+            onChange={this.handleInputChange}
+            type="email"
+            placeholder="name@gmail.com"
+          />
+          <input
+            value={this.state.userName}
+            name="userName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder=" New User Name"
+          />
+          <input
             value={this.state.password}
             name="password"
             onChange={this.handleInputChange}
             type="password"
             placeholder="Password"
+          />
+          <input
+            value={this.state.mainPlatform}
+            name="mainPlatform"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder=" Preferred Game System"
+          />
+          <input
+            value={this.state.gamerTag}
+            name="gamerTag"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder=" Preferred Gamer Tag"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>

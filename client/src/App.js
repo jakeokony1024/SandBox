@@ -24,7 +24,7 @@ class App extends React.Component {
       
         <Row>
           <Col size = "md-4">
-          <StreamApp
+          {/* <StreamApp
         apiKey= {process.env.REACT_APP_CHAT_KEY}
         appId={process.env.REACT_APP_CHAT_ID}
         token={process.env.REACT_APP_CHAT_TOKEN}
@@ -50,7 +50,7 @@ class App extends React.Component {
               />
             }
           />
-      </StreamApp>
+      </StreamApp> */}
           </Col>
         </Row>
       
