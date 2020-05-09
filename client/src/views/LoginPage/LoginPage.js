@@ -22,6 +22,8 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 
 import image from "assets/img/bg7.jpg";
+//Login Methods
+
 
 const useStyles = makeStyles(styles);
 
@@ -138,7 +140,14 @@ export default function LoginPage(props) {
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple color="primary" size="lg">
-                      Get started
+                      Login 
+                    </Button>
+                    <Button 
+                    simple color = "primary" 
+                    size = "lg"
+                    href = "/signUpPage"
+                    >
+                      New User? Sign Up Here!
                     </Button>
                   </CardFooter>
                 </form>

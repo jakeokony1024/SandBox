@@ -5,8 +5,8 @@ import Jumbotron from "../components/Jumbotron";
 import { Redirect } from "react-router-dom";
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
-
-const dashboardRoutes = ["http://localhost:3000/"];
+import form from "components/Form"
+const dashboardRoutes = [];
 
 class SignUpPage extends Component {
     constructor(props) {
@@ -44,7 +44,7 @@ class SignUpPage extends Component {
                 } else {
                     alert(` Welcome to SandBox ${this.state.userName}!`)
                     this.apiCall();
-                    this.setState({ redirect: "/pages/profilePage"})
+                    this.setState({ redirect: "/ProfilePage"})
                 }
             }
 
@@ -87,73 +87,62 @@ class SignUpPage extends Component {
                         <Jumbotron> <h1>Welcome to SandBox, </h1><h1> Create an Accout below!</h1></Jumbotron>
                     </Col>
                 </Row>
-                
+                </Container>
+                <Container>
+                <Row>
                 <form className="form">
-                    <Col size = "md-10">
-                    <input 
-                        value = {this.state.firstName} 
-                        name = "firstName" 
-                        onChange = {this.handleInputChange}
-                        type = "text"
-                        placeholder = "First Name"
+                    <input
+                        value={this.state.firstName}
+                        name="firstName"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="First Name"
                     />
-                    </Col>
-                    <Col size = "md-10">
-                    <input 
-                        value = {this.state.lastName} 
-                        name = "lastName" 
-                        onChange = {this.handleInputChange}
-                        type = "text"
-                        placeholder = "Last Name"
+                    <input
+                        value={this.state.lastName}
+                        name="lastName"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Last Name"
                     />
-                    </Col>
-                    <Col size = "md-10">
-                    <input 
-                        value = {this.state.email} 
-                        name = "email" 
-                        onChange = {this.handleInputChange}
-                        type = "email"
-                        placeholder = "example@email.com"
+                    <input
+                        value={this.state.email}
+                        name="email"
+                        onChange={this.handleInputChange}
+                        type="email"
+                        placeholder="name@gmail.com"
                     />
-                    </Col>
-                    <Col size = "md-10">
-                    <input 
-                        value = {this.state.userName} 
-                        name = "userName" 
-                        onChange = {this.handleInputChange}
-                        type = "text"
-                        placeholder = "User Name"
+                    <input
+                        value={this.state.userName}
+                        name="userName"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder=" New User Name"
                     />
-                    </Col>
-                    <Col size = "md-10">
-                    <input 
-                        value = {this.state.password} 
-                        name = "password" 
-                        onChange = {this.handleInputChange}
-                        type = "password"
-                        placeholder = "Password"
+                    <input
+                        value={this.state.password}
+                        name="password"
+                        onChange={this.handleInputChange}
+                        type="password"
+                        placeholder="Password"
                     />
-                    </Col>
-                    <Col size = "md-10">
-                    <input 
-                        value = {this.state.mainPlatform} 
-                        name = "mainPlatform" 
-                        onChange = {this.handleInputChange}
-                        type = "text"
-                        placeholder = "Preferred Game Console"
+                    <input
+                        value={this.state.mainPlatform}
+                        name="mainPlatform"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder=" Preferred Game System"
                     />
-                    </Col>
-                    <Col size = "md-10">
-                    <input 
-                        value = {this.state.gamerTag} 
-                        name = "gamerTag" 
-                        onChange = {this.handleInputChange}
-                        type = "text"
-                        placeholder = "Main Gamer Tag"
+                    <input
+                        value={this.state.gamerTag}
+                        name="gamerTag"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder=" Preferred Gamer Tag"
                     />
-                    </Col>
-                    < button onClick = {this.handleFormSubmit}>Create Account</button>
-                </form>
+                    <button onClick={this.handleFormSubmit}>Submit</button>
+                    </form>
+                </Row>
                 
             </Container>
             </div>

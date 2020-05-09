@@ -1,23 +1,18 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import {Container, Row, Col} from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-// import {List, ListItem} from "../components/List";
 import SearchForm from "../components/SearchForm";
 import axios from "axios";
+import api from "../utils/api";
 import Button from "components/CustomButtons/Button.js";
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Card from "../components/Card/Card";
-// import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
-// import { makeStyles } from "@material-ui/core/styles";
-// import { height, width } from "@material-ui/system";
-// import styles from "assets/jss/material-kit-react/views/loginPage.js";
+import {ListItem} from "../components/List";
+import { Link } from "react-router-dom";
 
 const dashboardRoutes = [];
-
-// const useStyles = makeStyles(styles);
 
 class GamePage extends Component {
     constructor(props) {
@@ -31,28 +26,18 @@ class GamePage extends Component {
 
         }
     }
-    // componentDidMount() {
-    //     return axios({
-    //     "method":"GET",
-    //     "url":"https://rawg-video-games-database.p.rapidapi.com/games",
-    //     "headers":{
-    //     "content-type":"application/octet-stream",
-    //     "x-rapidapi-host":"rawg-video-games-database.p.rapidapi.com",
-    //     "x-rapidapi-key":process.env.REACT_APP_RAWG_KEY
-    //     }
-    //     })
-    //     .then((response)=>{
-    //         this.setState({ 
-    //             savedGames: response.data.results,
-    //             name: response.data.results.name,
-    //             background_image: response.data.results.background_image
-    //         })
-    //     })
-    //     .catch (err => console.log(err))
-    // }
+    componentDidMount() {
+        this.gameGet();
+        console.log(this.state.savedGames)
+    }
 
     handleInputChange = event => {
-        this.setState({ search: event.target.value })
+        let value = event.target.value;
+        const name = event.target.name;
+        this.setState({ 
+            [name]: value,
+            search: event.target.value 
+        })
     }
 
     handleFormSubmit = event => {
@@ -67,27 +52,47 @@ class GamePage extends Component {
             }
             })
             .then((response)=>{
-                console.log(response.data.results)
-                console.log(response.data.results.platforms)
             let searchedGame = response.data.results[0].name
             let searchedGameImg = response.data.results[0].background_image
             this.setState({
                 searchResult: searchedGame,
-                background_image: searchedGameImg,
-                placeholder: ""
+                background_image: searchedGameImg 
             })
             })
             .catch((error)=>{
             console.log(error)
             })
+            
     }
 
     handleButtonCLick = event => {
         event.preventDefault();
-        let gameList = this.state.searchResult;
-        console.log(gameList)
-        
+        this.gamePost();
+        this.setState({
+            search: "",
+            background_image: "",
+            searchResult: []
+        })
+    }
 
+    gamePost = () => {
+        let gameObject = {
+            name: this.state.searchResult,
+            image: this.state.background_image
+        }
+        api.addGame(gameObject)
+        .then(res => (gameObject ))
+        .catch((err) => console.log(err))
+    }
+
+    gameGet = () => {
+        api.getGames()
+        .then((res) =>
+            this.setState({
+                savedGames: res.data
+            })
+        )
+        .catch((err) => console.log(err));
     }
     render() {
         return (
@@ -112,8 +117,10 @@ class GamePage extends Component {
                     <Row>
                         <Col size = "md-12">
                             <SearchForm
+                            value = {this.state.search}
                             handleInputChange = {this.handleInputChange}
-                            handleFormSubmit = {this.handleFormSubmit}/>
+                            handleFormSubmit = {this.handleFormSubmit}
+                            />
                         </Col>
                     </Row>
                 </Container>
@@ -139,7 +146,35 @@ class GamePage extends Component {
                             </Button>
                     </Card>
                     </Col>
+                    <Col size = "md-5">
+                        {this.state.savedGames.length ? (
+                            <Card>
+                                {this.state.savedGames.map((savedGame) => (
+                                    <ListItem key = {savedGame._id}>
+                                        <Link to = {"/games/" + savedGame._id}/>
+                                    <CardHeader
+                                    color="transparent" 
+                                    style={{textAlign: "center"}}>
+                                        {savedGame.name}
+                                    </CardHeader>
+                                    <img 
+                                    src = {savedGame.image}
+                                    alt=""
+                                    style={{
+                                        boxSizing: "border-box",
+                                        height: "100%",
+                                        width: "100%"
+                                    }}
+                                    />
+                                    </ListItem>
+                                ))}
+                                </Card>
+                        ):(
+                        <h3>No Results to Display</h3>
+                        )}
+                    </Col>
                 </Row>
+                
                 {/* <Row>
                     <Col size = "md-12"> 
                     {this.state.savedGames.length > 0 ? (

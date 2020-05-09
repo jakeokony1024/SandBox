@@ -1,5 +1,4 @@
 import axios from "axios";
-require('dotenv').config();
 
 export default {
 
@@ -13,7 +12,15 @@ export default {
 
     addUser: function(newUserData) {
         return axios.post("/api/users", newUserData)
-    }
+    },
 
-    
+    getGames: function() {
+        return axios.get("/api/games")
+    },
+
+    addGame: function(newGameData) {
+        
+        return axios.post("/api/games", newGameData)
+        
+    }
 }
