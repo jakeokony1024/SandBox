@@ -1,4 +1,4 @@
-const {db} = require('./admin.js');
+const {db, admin} = require('./admin.js');
 
 module.exports = (req, res, next) => {
     let idToken;
@@ -10,10 +10,10 @@ module.exports = (req, res, next) => {
         console.error('No token found');
         return res.status(403).json({error: 'Unauthorized'});
     }
-    db.auth().verifyIdToken(idToken)//admin
+    admin.auth().verifyIdToken(idToken)
         .then((decodedToken) => {
             req.user = decodedToken;
-            console.log(decodedToken);
+            // console.log(decodedToken);
             return db.collection('users')
             .where('userId', '==', req.user.uid)
             .limit(1)
@@ -21,10 +21,11 @@ module.exports = (req, res, next) => {
         })
         .then((data) => {
             req.user.handle = data.docs[0].data().handle;
+            req.user.imageUrl = data.docs[0].data().imageUrl;
             return next();
         })
         .catch((err) => {
             console.error('Error while verifying token ', err);
             return res.status(403).json(err);
         });
-}
+};
