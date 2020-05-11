@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 
+
 class Login extends Component {
   constructor() {
     super();
@@ -16,7 +17,7 @@ class Login extends Component {
   }
 componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard"); // push user to dashboard when they login
+      this.props.history.push("/ProfilePage"); // push user to dashboard when they login
     }
 if (nextProps.errors) {
       this.setState({

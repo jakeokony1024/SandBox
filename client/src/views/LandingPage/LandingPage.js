@@ -57,8 +57,7 @@ export default function LandingPage(props) {
               <Button
                 color="danger"
                 size="lg"
-                href="http://localhost:3000/LoginPage"
-                target="_blank"
+                href="http://localhost:3000/login"
                 rel="noopener noreferrer"
               >
                 Login Here
@@ -69,10 +68,9 @@ export default function LandingPage(props) {
                 color="danger"
                 size="lg"
                 href="http://localhost:3000/ProfilePage"
-                target="_blank"
                 rel="noopener noreferrer"
               >
-                Profile Placeholder
+                Profile Dashboard
               </Button>
             </GridItem>
           </GridContainer>
