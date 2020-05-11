@@ -41,5 +41,11 @@ module.exports = {
 		.create(req.body)
 		.then((dbGameModel) => res.json(dbGameModel))
 		.catch((err) => res.json(err))	
+	},
+	deletGames: function (req, res){
+		db.Games.findById({_id: req.params.id})
+		.then((dbGameModel)=> dbGameModel.remove())
+		.then((dbGameModel) => res.json(dbGameModel))
+		.catch((err)=> (err))
 	}
 }

@@ -19,8 +19,9 @@ export default {
     },
 
     addGame: function(newGameData) {
-        
         return axios.post("/api/games", newGameData)
-        
+    },
+    deleteGame: function(id) {
+        return axios.remove("/api/games" + id)
     }
 }

@@ -5,27 +5,27 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     firstName: {
         type: String,
-        required: true
+        // required: true
     },
     lastName: {
         type: String,
-        required: true
+        // required: true
     },
 	username: { 
         type: String, 
-        required: true, 
+        // required: true, 
     },
 	password: { 
         type: String, 
-        required: true, 
+        // required: true, 
     },
     email: {
         type: String, 
-        required: true, 
+        // required: true, 
     },
     mainPlatform: {
         type: String,
-        required: true
+        // required: true
     },
 	date: { 
         type: Date, 

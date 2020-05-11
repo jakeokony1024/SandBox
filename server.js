@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const routes = require("./routes");
+const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 require('dotenv').config()
 
 // Define middleware here
@@ -15,11 +15,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-// app.use(routes);
+app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-	process.env.MONGODB_URI || "mongodb://localhost:27017/SandBox",
+	process.env.MONGODB_URI || "mongodb://user1:password1@ds115798.mlab.com:15798/heroku_tqprddv4",
 	{ useNewUrlParser: true }
 );
 
