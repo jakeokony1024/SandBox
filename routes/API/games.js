@@ -1,6 +1,8 @@
-const router = require("express").Router();
-const userController = require("../../controllers/index");
+// const router = require("express").Router();
+// const userController = require("../../controllers/index");
 
-router.route("/").get(userController.getSavedGames).post(userController.postSavedGames);
+// router.route("/").get(userController.getSavedGames).post(userController.postSavedGames);
 
-module.exports = router;
+// router.route("/:id").delete(userController.deleteGames)
+
+// module.exports = router;

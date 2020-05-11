@@ -5,6 +5,7 @@ import Jumbotron from "../components/Jumbotron";
 import { Redirect } from "react-router-dom";
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
+// import {signUp, getAuthenticatedUser} from "../functions/handlers/users.js"
 import form from "components/Form"
 const dashboardRoutes = [];
 
