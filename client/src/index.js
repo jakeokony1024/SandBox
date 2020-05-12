@@ -5,7 +5,11 @@ import App from "./App"
 
 import "assets/scss/material-kit-react.scss?v=1.8.0";
 
+import 'bootstrap/dist/css/bootstrap.css';
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
+
 
 ReactDOM.render(
-  <App/>, document.getElementById("root")
+  <App />, document.getElementById("root")
 );

@@ -9,22 +9,25 @@ import LoginPage from "./views/LoginPage/LoginPage"
 import { Container, Row, Col } from './components/Grid';
 import ProfilePage from 'views/ProfilePage/ProfilePage';
 import LandingPage from 'views/LandingPage/LandingPage';
+import dashBoard from 'pages/dashBoard';
 
 class App extends React.Component {
   render() {
-    return(
+    return (
       <Container>
-      <Router>
-        <div>
-          <Route exact path = "/" component={LandingPage} />
-          <Route exact path = "/LoginPage" component={LoginPage} />
-          <Route exact path = "/profilePage" component={ProfilePage} />
-          <Route exact path = "/gamesPage" component={gamesPage} />
-          <Route exact path = "/signUpPage" component={SignUpPage}/>
-      
-        <Row>
-          <Col size = "md-4">
-          {/* <StreamApp
+        <Router>
+          <div>
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/LoginPage" component={LoginPage} />
+            <Route exact path="/profilePage" component={ProfilePage} />
+            <Route exact path="/gamesPage" component={gamesPage} />
+            <Route exact path="/signUpPage" component={SignUpPage} />
+            <Route exact path="/dashBoard" component={dashBoard} />
+
+
+            <Row>
+              <Col size="md-4">
+                {/* <StreamApp
         apiKey= {process.env.REACT_APP_CHAT_KEY}
         appId={process.env.REACT_APP_CHAT_ID}
         token={process.env.REACT_APP_CHAT_TOKEN}
@@ -51,11 +54,11 @@ class App extends React.Component {
             }
           />
       </StreamApp> */}
-          </Col>
-        </Row>
-      
-      </div>
-      </Router>
+              </Col>
+            </Row>
+
+          </div>
+        </Router>
       </Container>
     );
   }
