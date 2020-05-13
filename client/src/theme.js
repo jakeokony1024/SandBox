@@ -1,7 +1,10 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 const theme = createMuiTheme({
-    palette: {
-        primary: { 500: '#467fcf' },
-    },
-})
+    spreadIt: {
+        content: {
+        padding: 25,
+        objectFit: "cover"
+        }
+    }
+});
 export default theme

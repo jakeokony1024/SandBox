@@ -14,7 +14,7 @@ class GamePage extends Component {
         super(props);
         this.state = {
             search: "",
-            savedGames: [{}],
+            savedGames: [],
             name: "",
             background_image: "",
             searchResult: []
@@ -76,7 +76,7 @@ class GamePage extends Component {
             image: this.state.background_image
         }
         api.addGame(gameObject)
-        .then(res => (gameObject ))
+        .then(res => (gameObject))
         .catch((err) => console.log(err))
     }
     gameGet = () => {
