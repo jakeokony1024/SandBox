@@ -19,7 +19,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-	process.env.MONGODB_URI || "mongodb://user1:password1@ds115798.mlab.com:15798/heroku_tqprddv4",
+	process.env.MONGODB_URI || "mongodb://localhost:27017/SandBox",
 	{ useNewUrlParser: true }
 );
 

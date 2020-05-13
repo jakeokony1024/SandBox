@@ -2,29 +2,29 @@ const db = require("../models");
 
 module.exports = {
     findAll: function(req, res) {
-        db.User
+        db.UserGames
         .find(req.query)
         .sort({ date: -1 })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
 	findById: function (req, res) {
-		db.User.find({ _id: req.params.id })
+		db.UserGames.find({ _id: req.params.id })
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.json(err));
 	},
 	create: function (req, res) {
-		db.User.create(req.body)
+		db.UserGames.create(req.body)
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.json(err));
 	},
 	update: function (req, res) {
-		db.User.findOneAndUpdate({ _id: req.params.id }, req.body)
+		db.UserGames.findOneAndUpdate({ _id: req.params.id }, req.body)
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.json(err));
 	},
 	remove: function (req, res) {
-		db.User.findById({ _id: req.params.id })
+		db.UserGames.findById({ _id: req.params.id })
 			.then((dbModel) => dbModel.remove())
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.json(err));
@@ -32,7 +32,7 @@ module.exports = {
 	getSavedGames: function(req, res){
 		db.Games
 		.find(req.query)
-		.sort({date: -1})
+		.sort({date: +1})
 		.then(dbGameModel => res.json(dbGameModel))
 		.catch(err => res.json(err))
 	}, 

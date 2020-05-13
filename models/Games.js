@@ -8,7 +8,6 @@ const gameSchema = new Schema({
     },
     image: {
         type: String, 
-
     }
 })
 
