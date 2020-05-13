@@ -21,6 +21,7 @@ import { Container, Row, Col } from "./components/Grid";
 import ProfilePage from "views/ProfilePage/ProfilePage";
 import LandingPage from "views/LandingPage/LandingPage";
 import jwtDecode from "jwt-decode";
+import dashboard from "./pages/dashboard"
 //MUI stuff
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
@@ -48,6 +49,8 @@ class App extends React.Component {
             <Switch>
               <div>
                 <Route exact path="/" component={LandingPage} />
+                <Route exact path="/dashboard" component={dashboard} />
+
                 <AuthRoute
                   exact
                   path="/login"
@@ -73,35 +76,35 @@ class App extends React.Component {
                   authenticated={authenticated}
                 />
                 <Row>
-                  <Col size="md-4">
+                  {/* <Col size="md-4">
                     <StreamApp
-        apiKey= {process.env.REACT_APP_CHAT_KEY}
-        appId={process.env.REACT_APP_CHAT_ID}
-        token={process.env.REACT_APP_CHAT_TOKEN}
-      >
-        <NotificationDropdown notify />
-        <StatusUpdateForm
-          feedGroup="timeline"
-          userId="user-one" />
-        <FlatFeed
-          options={ {reactions: { recent: true } } }
-          notify
-          Activity={(props) =>
-              <Activity {...props}
-                Footer={() => (
-                  <div style={ {padding: '8px 16px'} }>
-                    <LikeButton {...props} />
-                    <CommentField
-                      activity={props.activity}
-                      onAddReaction={props.onAddReaction} />
-                    <CommentList activityId={props.activity.id} />
-                  </div>
-                )}
-              />
-            }
-          />
-      </StreamApp>
-                  </Col>
+                      apiKey={process.env.REACT_APP_CHAT_KEY}
+                      appId={process.env.REACT_APP_CHAT_ID}
+                      token={process.env.REACT_APP_CHAT_TOKEN}
+                    >
+                      <NotificationDropdown notify />
+                      <StatusUpdateForm
+                        feedGroup="timeline"
+                        userId="user-one" />
+                      <FlatFeed
+                        options={{ reactions: { recent: true } }}
+                        notify
+                        Activity={(props) =>
+                          <Activity {...props}
+                            Footer={() => (
+                              <div style={{ padding: '8px 16px' }}>
+                                <LikeButton {...props} />
+                                <CommentField
+                                  activity={props.activity}
+                                  onAddReaction={props.onAddReaction} />
+                                <CommentList activityId={props.activity.id} />
+                              </div>
+                            )}
+                          />
+                        }
+                      />
+                    </StreamApp>
+                  </Col> */}
                 </Row>
               </div>
             </Switch>

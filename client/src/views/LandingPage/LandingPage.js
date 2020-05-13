@@ -67,7 +67,7 @@ export default function LandingPage(props) {
               <Button
                 color="danger"
                 size="lg"
-                href="http://localhost:3000/ProfilePage"
+                href="http://localhost:3000/dashboard"
                 rel="noopener noreferrer"
               >
                 Profile Dashboard
