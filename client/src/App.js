@@ -82,7 +82,7 @@ class App extends React.Component {
         <NotificationDropdown notify />
         <StatusUpdateForm
           feedGroup="timeline"
-          userId="user-one" />
+          userId="user-one"/>
         <FlatFeed
           options={ {reactions: { recent: true } } }
           notify
@@ -93,8 +93,8 @@ class App extends React.Component {
                     <LikeButton {...props} />
                     <CommentField
                       activity={props.activity}
-                      onAddReaction={props.onAddReaction} />
-                    <CommentList activityId={props.activity.id} />
+                      onAddReaction={props.onAddReaction}/>
+                    <CommentList activityId={props.activity.id}/>
                   </div>
                 )}
               />
