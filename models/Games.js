@@ -8,11 +8,7 @@ const gameSchema = new Schema({
     },
     image: {
         type: String, 
-
-    } 
-    // firebaseId: {
-    //     type: String
-    // }
+    }
 })
 
 const Games = mongoose.model("Games", gameSchema);

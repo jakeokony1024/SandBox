@@ -78,6 +78,7 @@ class App extends React.Component {
                 <Row>
                   {/* <Col size="md-4">
                     <StreamApp
+<<<<<<< HEAD
                       apiKey={process.env.REACT_APP_CHAT_KEY}
                       appId={process.env.REACT_APP_CHAT_ID}
                       token={process.env.REACT_APP_CHAT_TOKEN}
@@ -105,6 +106,35 @@ class App extends React.Component {
                       />
                     </StreamApp>
                   </Col> */}
+=======
+        apiKey= {process.env.REACT_APP_CHAT_KEY}
+        appId={process.env.REACT_APP_CHAT_ID}
+        token={process.env.REACT_APP_CHAT_TOKEN}
+      >
+        <NotificationDropdown notify />
+        <StatusUpdateForm
+          feedGroup="timeline"
+          userId="user-one"/>
+        <FlatFeed
+          options={ {reactions: { recent: true } } }
+          notify
+          Activity={(props) =>
+              <Activity {...props}
+                Footer={() => (
+                  <div style={ {padding: '8px 16px'} }>
+                    <LikeButton {...props} />
+                    <CommentField
+                      activity={props.activity}
+                      onAddReaction={props.onAddReaction}/>
+                    <CommentList activityId={props.activity.id}/>
+                  </div>
+                )}
+              />
+            }
+          />
+      </StreamApp>
+                  </Col>
+>>>>>>> 6b3c75db348d2b87127c18bb91ad4c473edda49c
                 </Row>
               </div>
             </Switch>

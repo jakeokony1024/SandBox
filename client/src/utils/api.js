@@ -3,15 +3,15 @@ import axios from "axios";
 export default {
 
     getUsers: function() {
-        return axios.get("/api/users");
+        return axios.get("/api/fbuser");
     },
 
     getUser: function(id) {
-        return axios.get("/api/users" + id)
+        return axios.get("/api/fbuser" + id)
     },
 
     addUser: function(newUserData) {
-        return axios.post("/api/users", newUserData)
+        return axios.post("/api/fbuser", newUserData)
     },
 
     getGames: function() {
@@ -22,6 +22,6 @@ export default {
         return axios.post("/api/games", newGameData)
     },
     deleteGame: function(id) {
-        return axios.remove("/api/games" + id)
+        return axios.delete("/api/games" + id)
     }
 }
