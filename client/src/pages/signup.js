@@ -3,6 +3,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import api from "../utils/api"
 //MUI stuff
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -72,6 +73,9 @@ class signup extends Component {
       mainPlatform: this.state.mainPlatform,
       gamerTag: this.state.gamerTag,
     };
+    api.addUser(newUserData) 
+      .then(res =>  console.log(res))
+      .catch((error) => console.log(error))
     axios
       .post("/signup", newUserData)
       .then((res) => {

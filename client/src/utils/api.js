@@ -3,15 +3,15 @@ import axios from "axios";
 export default {
 
     getUsers: function() {
-        return axios.get("/api/fbuser");
+        return axios.get("/api/users");
     },
 
     getUser: function(id) {
-        return axios.get("/api/fbuser" + id)
+        return axios.get("/api/users" + id)
     },
 
     addUser: function(newUserData) {
-        return axios.post("/api/fbuser", newUserData)
+        return axios.post("/api/users", newUserData)
     },
 
     getGames: function() {

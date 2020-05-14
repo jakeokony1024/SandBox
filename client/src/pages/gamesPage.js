@@ -24,18 +24,16 @@ class GamePage extends Component {
         this.gameGet();
     }
     handleInputChange = event => {
-        let value = event.target.value;
-        const name = event.target.name;
         this.setState({ 
-            [name]: value,
-            search: event.target.value 
+            search: event.target.value.split(" ").join("-").toLowerCase()
         })
+        console.log(this.state.search)
     }
     handleFormSubmit = event => {
         event.preventDefault();
         axios(this.state.search, {
             "method":"GET",
-            "url":"https://rawg-video-games-database.p.rapidapi.com/games?search=" + this.state.search,
+            "url":"https://rawg-video-games-database.p.rapidapi.com/games/" + this.state.search,
             "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"rawg-video-games-database.p.rapidapi.com",
@@ -43,6 +41,7 @@ class GamePage extends Component {
             }
             })
             .then((response)=>{
+                console.log(response)
             let searchedGame = response.data.results[0].name
             let searchedGameImg = response.data.results[0].background_image
             this.setState({
