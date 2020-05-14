@@ -73,25 +73,25 @@ class signup extends Component {
       mainPlatform: this.state.mainPlatform,
       gamerTag: this.state.gamerTag,
     };
+    axios
+    .post("/signup", newUserData)
+    .then((res) => {
+      console.log(res.data);
+      localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`); //token initialized here
+      this.setState({
+        loading: false,
+      });
+      this.props.history.push("/");
+    })
+    .catch((err) => {
+      this.setState({
+        errors: err.response.data,
+        loading: false,
+      });
+    });
     api.addUser(newUserData) 
       .then(res =>  console.log(res))
       .catch((error) => console.log(error))
-    axios
-      .post("/signup", newUserData)
-      .then((res) => {
-        console.log(res.data);
-        localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`); //token initialized here
-        this.setState({
-          loading: false,
-        });
-        this.props.history.push("/");
-      })
-      .catch((err) => {
-        this.setState({
-          errors: err.response.data,
-          loading: false,
-        });
-      });
   };
 
   handleChange = (event) => {

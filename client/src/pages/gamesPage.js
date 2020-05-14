@@ -24,20 +24,23 @@ class GamePage extends Component {
         this.gameGet();
     }
     handleInputChange = event => {
+        let value = event.target.value;
+        const name = event.target.name;
         this.setState({ 
-            search: event.target.value.split(" ").join("-").toLowerCase()
+            [name]: value,
+            search: event.target.value 
         })
-        console.log(this.state.search)
     }
     handleFormSubmit = event => {
         event.preventDefault();
-        axios(this.state.search, {
+        axios( {
             "method":"GET",
-            "url":"https://rawg-video-games-database.p.rapidapi.com/games/" + this.state.search,
+            "url":"https://rawg-video-games-database.p.rapidapi.com/games?search=" +this.state.search,
             "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"rawg-video-games-database.p.rapidapi.com",
-            "x-rapidapi-key": process.env.REACT_APP_RAWG_KEY
+            "x-rapidapi-key": process.env.REACT_APP_RAWG_KEY,
+            "useQueryString":true
             }
             })
             .then((response)=>{
