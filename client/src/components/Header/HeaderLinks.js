@@ -36,14 +36,14 @@ export default function HeaderLinks(props) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/gamesPage" className={classes.dropdownLink}>
-              Games Page 
-            </Link>,
             <Link to = "/ProfilePage" className = {classes.dropdownLink}>
               Profile Page
             </Link>,
-            <Link to = "/LoginPage" className = {classes.dropdownLink}>
+            <Link to = "/login" className = {classes.dropdownLink}>
             Login Page
+          </Link>,
+          <Link to = "/signup" className = {classes.dropdownLink}>
+          Create Account
           </Link>
           ]}
         />
@@ -57,13 +57,13 @@ export default function HeaderLinks(props) {
         >
           <CloudDownload className={classes.icons} /> Download
         </Button>
-      </ListItem> */}
+      </ListItem>
       <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
+        <Tooltip title="Delete">
           <IconButton aria-label="Delete">
             <DeleteIcon />
           </IconButton>
-        </Tooltip>*/}
+        </Tooltip>
         <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
@@ -113,7 +113,7 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fab fa-instagram"} />
           </Button>
         </Tooltip>
-      </ListItem>
+      </ListItem> */}
     </List>
   );
 }

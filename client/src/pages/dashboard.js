@@ -1,4 +1,15 @@
 import React, { useState } from 'react';
+import {
+  StreamApp,
+  NotificationDropdown,
+  FlatFeed,
+  LikeButton,
+  Activity,
+  CommentList,
+  CommentField,
+  StatusUpdateForm,
+} from "react-activity-feed";
+
 // nav bar
 import {
     Collapse,
@@ -12,12 +23,14 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText
+
 } from 'reactstrap';
 
 
 // col and row
 import { Container, Row, Col } from 'reactstrap';
+import GamesPage from "../pages/gamesPage"
+import UserInfo from "../components/UserInfo"
 
 
 
@@ -60,6 +73,42 @@ const Example = (props) => {
                     </Nav>
                 </Collapse>
             </Navbar>
+            <Container>
+            <Row>
+                <Col>
+                <br></br>
+                <UserInfo/></Col>
+                <Col>
+                {/* <StreamApp
+                    apiKey={process.env.REACT_APP_CHAT_KEY}
+                    appId={process.env.REACT_APP_CHAT_ID}
+                    token={process.env.REACT_APP_CHAT_TOKEN}
+                    >
+                    <NotificationDropdown notify />
+                    <StatusUpdateForm
+                        feedGroup="timeline"
+                        userId="user-one" />
+                    <FlatFeed
+                        options={{ reactions: { recent: true } }}
+                        notify
+                        Activity={(props) =>
+                        <Activity {...props}
+                            Footer={() => (
+                            <div style={{ padding: '8px 16px' }}>
+                                <LikeButton {...props} />
+                                <CommentField
+                                activity={props.activity}
+                                onAddReaction={props.onAddReaction} />
+                                <CommentList activityId={props.activity.id} />
+                            </div>
+                            )}
+                        />
+                        }
+                    />
+                    </StreamApp> </Col> */}</Col>
+                <Col><GamesPage/></Col>
+            </Row>
+        </Container>
         </div>
     );
 }

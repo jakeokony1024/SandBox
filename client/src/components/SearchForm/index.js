@@ -6,9 +6,14 @@ const SearchForm = props => {
     return (
         <form>
             <div className="form-group">
-                <label className="gameSearchLabel"><h3>Search For Game</h3></label>
+                <label 
+                className="gameSearchLabel"
+                style={{
+                    textAlign: "center"
+                }}
+                ><h3>Search For Game</h3></label>
                 <br></br>
-                <input className="col-12 form-control"
+                <input className="col-10 form-control"
                     value={props.search}
                     type="text"
                     name="searchGame"

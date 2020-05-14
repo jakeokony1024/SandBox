@@ -5,9 +5,9 @@ import axios from "axios";
 import api from "../utils/api";
 import Button from "components/CustomButtons/Button.js";
 import Card from "../components/Card/Card";
-import CardHeader from "components/Card/CardHeader.js";
-import {ListItem } from "../components/List";
+
 import DeleteBtn from "components/DeleteBtn";
+import {Link} from "react-router-dom"
 
 class GamePage extends Component {
     constructor(props) {
@@ -44,7 +44,6 @@ class GamePage extends Component {
             }
             })
             .then((response)=>{
-                console.log(response)
             let searchedGame = response.data.results[0].name
             let searchedGameImg = response.data.results[0].background_image
             this.setState({
@@ -61,7 +60,7 @@ class GamePage extends Component {
         event.preventDefault();
         this.gamePost();
         this.setState({
-            search: "",
+            search: " ",
             background_image: "",
             searchResult: []
         })
@@ -86,8 +85,7 @@ class GamePage extends Component {
         .then((res) =>
             this.setState({
                 savedGames: res.data
-            }),
-            console.log(this.state.savedGames)
+            })
         )
         .catch((err) => console.log(err));
     }
@@ -97,7 +95,7 @@ class GamePage extends Component {
                 <div className="container2">
                     <div className="container3">
                     <Row>
-                        <Col size = "md-4">
+                        <Col size = "md-12">
                             <Card>
                                 <SearchForm
                                 value = {this.state.search}
@@ -106,11 +104,16 @@ class GamePage extends Component {
                                 />
                             </Card>
                         </Col>
-                        <Col size = "md-4">
+                    </Row>
+                    <Row>
+                        <Col size = "md-12">
                             <Card>
-                                <CardHeader color="transparent" style={{textAlign: "center"}}>
-                                <h3>Game: {this.state.searchResult}</h3>
-                                </CardHeader>
+                                <h5 
+                                color="transparent" 
+                                style={{textAlign: "center"}}
+                                >
+                                Game: {this.state.searchResult}
+                                </h5>
                                     <img 
                                     src={this.state.background_image} 
                                     alt=""
@@ -126,16 +129,19 @@ class GamePage extends Component {
                                     </Button>
                             </Card>
                         </Col>
-                        <Col size = "md-4">
+                    </Row>
+                    <Row>
+                        <Col size = "md-12">
                             {this.state.savedGames.length > 0 ? (
-                                <Card>
+                                <div>
                                 {this.state.savedGames.map((savedGame) => (
-                                    <ListItem key = {savedGame._id}>
-                                    <CardHeader
+                                    <Card key = {savedGame._id}>
+                                    <Link to ={"/games/" + savedGame._id}>
+                                    <h5
                                     color="transparent" 
                                     style={{textAlign: "center"}}>
                                         {savedGame.name}
-                                    </CardHeader>
+                                    </h5>
                                     <img 
                                     src = {savedGame.image}
                                     alt=""
@@ -145,10 +151,11 @@ class GamePage extends Component {
                                         width: "100%"
                                     }}
                                     />
-                                    <DeleteBtn onClick = {this.deleteGame}/>
-                                    </ListItem>
+                                    </Link>
+                                    <DeleteBtn onClick={()=> this.deleteGame(savedGame._id)}/>
+                                    </Card>
                                 ))}
-                                </Card>
+                                </div>
                             ):(
                             <h3>No Results to Display</h3>
                             )}

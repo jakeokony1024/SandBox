@@ -56,7 +56,7 @@ export default function ProductSection() {
               vertical
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          {/* <GridItem xs={12} sm={12} md={4}>
             <InfoArea
               title="Fingerprint"
               description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
@@ -64,7 +64,7 @@ export default function ProductSection() {
               iconColor="danger"
               vertical
             />
-          </GridItem>
+          </GridItem> */}
         </GridContainer>
       </div>
     </div>

@@ -140,6 +140,7 @@ class login extends Component {
               Don't have an account? Sign up <Link to="/signup">here!</Link>
             </small>
           </form>
+          <small><Link to="/">Home</Link></small>
         </Grid>
         <Grid item sm />
       </Grid>

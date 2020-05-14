@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 import "assets/scss/material-kit-react.scss?v=1.8.0";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 ReactDOM.render(<App />, document.getElementById("root"));

@@ -1,23 +1,23 @@
 import React from "react";
-import {
-  StreamApp,
-  NotificationDropdown,
-  FlatFeed,
-  LikeButton,
-  Activity,
-  CommentList,
-  CommentField,
-  StatusUpdateForm,
-} from "react-activity-feed";
+// import {
+//   StreamApp,
+//   NotificationDropdown,
+//   FlatFeed,
+//   LikeButton,
+//   Activity,
+//   CommentList,
+//   CommentField,
+//   StatusUpdateForm,
+// } from "react-activity-feed";
 import "react-activity-feed/dist/index.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import gamesPage from "./pages/gamesPage";
 import themeFile from "./utils/theme";
-import profilePage from "./pages/profilePage";
+// import profilePage from "./pages/profilePage";
 import signup from "./pages/signup";
 import login from "./pages/login";
 import AuthRoute from "./utils/AuthRoute";
-import { Container, Row, Col } from "./components/Grid";
+import { Container, Row} from "./components/Grid";
 import ProfilePage from "views/ProfilePage/ProfilePage";
 import LandingPage from "views/LandingPage/LandingPage";
 import jwtDecode from "jwt-decode";

@@ -2,7 +2,7 @@
   "name": "sandbox",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://us-central1-sandbox-356b4.cloudfunctions.net/api",
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
