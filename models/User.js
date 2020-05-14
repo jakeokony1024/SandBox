@@ -11,7 +11,7 @@ const userSchema = new Schema({
         type: String,
         // required: true
     },
-	username: { 
+	email: { 
         type: String, 
         // required: true, 
     },
@@ -19,13 +19,19 @@ const userSchema = new Schema({
         type: String, 
         // required: true, 
     },
-    email: {
+    confirmPassword: {
         type: String, 
         // required: true, 
     },
     mainPlatform: {
         type: String,
         // required: true
+    },
+    handle: {
+        type: String,
+    },
+    gamerTag: {
+        type: String
     },
 	date: { 
         type: Date, 
