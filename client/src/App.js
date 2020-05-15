@@ -1,19 +1,19 @@
 import React from "react";
-// import {
-//   StreamApp,
-//   NotificationDropdown,
-//   FlatFeed,
-//   LikeButton,
-//   Activity,
-//   CommentList,
-//   CommentField,
-//   StatusUpdateForm,
-// } from "react-activity-feed";
+import {
+  StreamApp,
+  NotificationDropdown,
+  FlatFeed,
+  LikeButton,
+  Activity,
+  CommentList,
+  CommentField,
+  StatusUpdateForm,
+} from "react-activity-feed";
 import "react-activity-feed/dist/index.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import gamesPage from "./pages/gamesPage";
 import themeFile from "./utils/theme";
-// import profilePage from "./pages/profilePage";
+import profilePage from "./pages/profilePage";
 import signup from "./pages/signup";
 import login from "./pages/login";
 import AuthRoute from "./utils/AuthRoute";
@@ -22,11 +22,8 @@ import ProfilePage from "views/ProfilePage/ProfilePage";
 import LandingPage from "views/LandingPage/LandingPage";
 import jwtDecode from "jwt-decode";
 import dashboard from "./pages/dashboard";
-//MUI stuff
-// import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
-// import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import axios from "axios";
-// const theme = createMuiTheme(themeFile);
+
 axios.defaults.baseURL =
   "https://us-central1-sandbox-356b4.cloudfunctions.net/api";
 
@@ -45,7 +42,6 @@ if (token) {
 class App extends React.Component {
   render() {
     return (
-      // <MuiThemeProvider theme={theme}>
       <Container>
         <Router>
           <Switch>
@@ -110,7 +106,6 @@ class App extends React.Component {
           </Switch>
         </Router>
       </Container>
-      // </MuiThemeProvider>
     );
   }
 }
