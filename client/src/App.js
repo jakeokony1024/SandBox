@@ -17,16 +17,18 @@ import themeFile from "./utils/theme";
 import signup from "./pages/signup";
 import login from "./pages/login";
 import AuthRoute from "./utils/AuthRoute";
-import { Container, Row} from "./components/Grid";
+import { Container, Row } from "./components/Grid";
 import ProfilePage from "views/ProfilePage/ProfilePage";
 import LandingPage from "views/LandingPage/LandingPage";
 import jwtDecode from "jwt-decode";
-import dashboard from "./pages/dashboard"
+import dashboard from "./pages/dashboard";
 //MUI stuff
-import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
-import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-
-const theme = createMuiTheme(themeFile);
+// import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
+// import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import axios from "axios";
+// const theme = createMuiTheme(themeFile);
+axios.defaults.baseURL =
+  "https://us-central1-sandbox-356b4.cloudfunctions.net/api";
 
 let authenticated;
 const token = localStorage.FBIdToken; //token is here
@@ -43,40 +45,39 @@ if (token) {
 class App extends React.Component {
   render() {
     return (
-      <MuiThemeProvider theme={theme}>
-        <Container>
-          <Router>
-            <Switch>
-              <div>
-                <Route exact path="/" component={LandingPage} />
-                <Route exact path="/dashboard" component={dashboard} />
+      // <MuiThemeProvider theme={theme}>
+      <Container>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/dashboard" component={dashboard} />
 
-                <AuthRoute
-                  exact
-                  path="/login"
-                  component={login}
-                  authenticated={authenticated}
-                />
-                <AuthRoute
-                  exact
-                  path="/profilePage"
-                  component={ProfilePage}
-                  authenticated={authenticated}
-                />
-                <AuthRoute
-                  exact
-                  path="/gamesPage"
-                  component={gamesPage}
-                  authenticated={authenticated}
-                />
-                <AuthRoute
-                  exact
-                  path="/signup"
-                  component={signup}
-                  authenticated={authenticated}
-                />
-                <Row>
-                  {/* <Col size="md-4">
+            <AuthRoute
+              exact
+              path="/login"
+              component={login}
+              authenticated={authenticated}
+            />
+            <AuthRoute
+              exact
+              path="/profilePage"
+              component={ProfilePage}
+              authenticated={authenticated}
+            />
+            <AuthRoute
+              exact
+              path="/gamesPage"
+              component={gamesPage}
+              authenticated={authenticated}
+            />
+            <Route
+              exact
+              path="/signup"
+              component={signup}
+              authenticated={authenticated}
+            />
+            <Row>
+              {/* <Col size="md-4">
                     <StreamApp
                       apiKey={process.env.REACT_APP_CHAT_KEY}
                       appId={process.env.REACT_APP_CHAT_ID}
@@ -105,12 +106,11 @@ class App extends React.Component {
                       />
                     </StreamApp>
                   </Col> */}
-                </Row>
-              </div>
-            </Switch>
-          </Router>
-        </Container>
-      </MuiThemeProvider>
+            </Row>
+          </Switch>
+        </Router>
+      </Container>
+      // </MuiThemeProvider>
     );
   }
 }

@@ -58,7 +58,7 @@ class login extends Component {
       password: this.state.password,
     };
     axios
-      .post("/login", userData) //    "proxy": "https://us-central1-sandbox-356b4.cloudfunctions.net/api"
+      .post("/login", userData)
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`); //token initialized here
@@ -140,7 +140,9 @@ class login extends Component {
               Don't have an account? Sign up <Link to="/signup">here!</Link>
             </small>
           </form>
-          <small><Link to="/">Home</Link></small>
+          <small>
+            <Link to="/">Home</Link>
+          </small>
         </Grid>
         <Grid item sm />
       </Grid>
