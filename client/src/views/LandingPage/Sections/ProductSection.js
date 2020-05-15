@@ -23,34 +23,32 @@ export default function ProductSection() {
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>Sandbox</h2>
           <h5 className={classes.description}>
-            Rememeber the days of old when you'd join your 
-            friends in the sandbox to play with cars, trucks, 
-            shovels and dirt? We do too. Now thanks to social media 
-            and overprotective parents, we all have social anxiety 
-            and cannot for 5 minutes talk to someone new. 
-            Here at SandBox, we take that trouble right out 
-            of your hands. Based on your 5 favorite video games, 
-            we auto-message 100 gamers that you're a new user and 
-            a little about yourself. Then you can chat, befriend 
-            and game together!
+            For Gamers by gamers,
+            SandBox will be able to send out your profile to players who share your gaming interest.
+            Bypassing the hardest thing to do on the internet. - Finding a way to make friends.
+            From there you will be able to chat and add more friends. Share experiences through gaming. Join game forums.
+            post and make comments and meet even more people. - With SandBox, the opportunities really are endless; you
+            have the greatest ice breaker of all...gaming.
+
           </h5>
         </GridItem>
       </GridContainer>
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={6}>
             <InfoArea
               title="Free Chat"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              description="Chat. Post. Comment. Share. Live. Our always on chat function means you can instantly message your new friends. Even during the most intense gaming session"
               icon={Chat}
               iconColor="info"
               vertical
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={6}>
             <InfoArea
               title="Verified Users"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              description="Coming soon, users will be able to login with their google, facebook, Xbox, PSN, or Steam account. 
+              Meaning added security and verified users. You can tell instantly who has more than one account attached by the green verified logo next to their account."
               icon={VerifiedUser}
               iconColor="success"
               vertical

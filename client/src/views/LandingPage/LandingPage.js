@@ -42,20 +42,22 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/landing-bg.jpg")}>
+      <Parallax filter image={require("assets/img/bg7.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>SandBox. A Gamers Place.</h1>
               <h4>
-                Every landing page needs a small description after the big bold
-                title, that{"'"}s why we added this text here. Add here all the
-                information that can make you or your product create the first
-                impression.
+                For the fun and friendships we had in the sandbox. We
+                bring a new era of making friends to the digital age. For gamers by gamers,
+                SandBox will send out your profile to players who share your gaming interests.
+                Bypassing the hardest thing to do on the internet. - Finding a way to make friends.
+                From there you will be able to chat and add more friends.
               </h4>
               <br />
               <Button
                 color="danger"
+                margin="5px"
                 size="lg"
                 href="http://localhost:3000/login"
                 rel="noopener noreferrer"
@@ -66,6 +68,7 @@ export default function LandingPage(props) {
 
               <Button
                 color="danger"
+                margin="5px"
                 size="lg"
                 href="http://localhost:3000/dashboard"
                 rel="noopener noreferrer"

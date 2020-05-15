@@ -16,7 +16,7 @@ import CardFooter from "components/Card/CardFooter.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
-import team1 from "assets/img/faces/avatar.jpg";
+import team1 from "assets/img/faces/thomas.jpg";
 import team2 from "assets/img/faces/profilepic.jpg";
 import team3 from "assets/img/faces/kendall.jpg";
 
@@ -46,10 +46,11 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
+                  As an aspiring web developer I enjoy the career I have now in SEO and can't wait to grab the future.
+                  I love this project and everything it stands for. Solving a real world problem that I face myself & doing so
+                  in a space that has such a big influence on my life.
+                  <a href="https://www.linkedin.com/in/thomasjhutch/"> 1. Checkout my linkedin </a>
+                  <a href="https://github.com/ThomasJHutch">2. View my Github</a>
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
