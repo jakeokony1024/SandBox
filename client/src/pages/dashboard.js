@@ -43,6 +43,8 @@ import DeleteBtn from "components/DeleteBtn";
 import { Link } from "react-router-dom"
 
 const Example = (props) => {
+
+
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -55,7 +57,7 @@ const Example = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/profilePage/">Profile</NavLink>
+                            <NavLink href="/ProfilePage/">Profile</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/">Sign Out</NavLink>

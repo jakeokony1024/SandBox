@@ -17,7 +17,7 @@ import CardFooter from "components/Card/CardFooter.js";
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
 import team1 from "assets/img/faces/thomas.jpg";
-import team2 from "assets/img/faces/profilepic.jpg";
+import team2 from "assets/img/faces/profilePic1.jpg";
 import team3 from "assets/img/faces/kendall.jpg";
 
 const useStyles = makeStyles(styles);
@@ -86,14 +86,18 @@ export default function TeamSection() {
               <h4 className={classes.cardTitle}>
                 Jacob Okony
                 <br />
-                <small className={classes.smallTitle}>API Development</small>
+                <small className={classes.smallTitle}>Full Stack Development</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
+                Full Stack Developer familiar with web application architecture and design. 
+                Known as being thorough and concise.  Leveraging a background in 
+                restaurant management to achieve project goals and build strong 
+                relationships with clients and employees. 
+                <br></br>
+                <a href="https://www.linkedin.com/in/jacobokony/">LinkedIn</a>
+                <br></br>
+                <a href="https://github.com/jakeokony1024">GitHub</a>
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
