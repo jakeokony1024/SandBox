@@ -24,8 +24,8 @@ import jwtDecode from "jwt-decode";
 import dashboard from "./pages/dashboard";
 import axios from "axios";
 
-axios.defaults.baseURL =
-  "https://us-central1-sandbox-356b4.cloudfunctions.net/api";
+// axios.defaults.baseURL =
+//   "https://us-central1-sandbox-356b4.cloudfunctions.net/api"; 
 
 let authenticated;
 const token = localStorage.FBIdToken; //token is here

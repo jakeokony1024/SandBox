@@ -77,11 +77,11 @@ class signup extends Component {
     .post("/signup", newUserData)
     .then((res) => {
       console.log(res.data);
-      localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`); //token initialized here
+      // localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`); //token initialized here
       this.setState({
         loading: false,
       });
-      this.props.history.push("/");
+      this.props.history.push("/dashboard");
     })
     .catch((err) => {
       this.setState({
