@@ -7,7 +7,7 @@ export default {
     },
 
     getUser: function(id) {
-        return axios.get("/api/users" + id)
+        return axios.get("/api/users/" + id)
     },
 
     addUser: function(newUserData) {
@@ -22,6 +22,6 @@ export default {
         return axios.post("/api/games", newGameData)
     },
     deleteGame: function(id) {
-        return axios.delete("/api/games" + id)
+        return axios.delete("/api/games/" + id)
     }
 }
