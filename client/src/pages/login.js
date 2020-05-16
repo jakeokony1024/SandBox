@@ -61,11 +61,11 @@ class login extends Component {
       .post("/login", userData)
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`); //token initialized here
+        // localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`); //token initialized here
         this.setState({
           loading: false,
         });
-        this.props.history.push("/");
+        this.props.history.push("/profilePage");
       })
       .catch((err) => {
         this.setState({

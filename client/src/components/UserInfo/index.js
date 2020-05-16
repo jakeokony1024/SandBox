@@ -39,8 +39,10 @@ api.getUsers()
                 <List>
                 {this.state.users.map((user) => (
                   <ListItem key={user._id}>
-                  <Link to={"/users/" + user._id}> 
+                  <Link to={"/profilePage"}> 
                       <strong>{"SandBox Username: " + user.handle}</strong>
+                      <br/>
+                      <strong>{"Main Console: " + user.mainPlatform} </strong>
                   </Link>
                   </ListItem>
                 ))}

@@ -5,8 +5,8 @@ import axios from "axios";
 import api from "../utils/api";
 import Button from "components/CustomButtons/Button.js";
 import Card from "../components/Card/Card";
-import DeleteBtn from "components/DeleteBtn";
-import {Link} from "react-router-dom"
+// import DeleteBtn from "components/DeleteBtn";
+// import {Link} from "react-router-dom"
 
 class GamePage extends Component {
     constructor(props) {
@@ -130,7 +130,7 @@ class GamePage extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col size = "md-12">
+                        {/* <Col size = "md-12">
                             {this.state.savedGames.length > 0 ? (
                                 <div>
                                 {this.state.savedGames.map((savedGame) => (
@@ -158,7 +158,7 @@ class GamePage extends Component {
                             ):(
                             <h3>No Results to Display</h3>
                             )}
-                        </Col>
+                        </Col> */}
                     </Row>
                     </div>
                 </div>

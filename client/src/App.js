@@ -1,19 +1,19 @@
 import React from "react";
-import {
-  StreamApp,
-  NotificationDropdown,
-  FlatFeed,
-  LikeButton,
-  Activity,
-  CommentList,
-  CommentField,
-  StatusUpdateForm,
-} from "react-activity-feed";
+// import {
+//   StreamApp,
+//   NotificationDropdown,
+//   FlatFeed,
+//   LikeButton,
+//   Activity,
+//   CommentList,
+//   CommentField,
+//   StatusUpdateForm,
+// } from "react-activity-feed";
 import "react-activity-feed/dist/index.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import gamesPage from "./pages/gamesPage";
-import themeFile from "./utils/theme";
-import profilePage from "./pages/profilePage";
+// import themeFile from "./utils/theme";
+// import profilePage from "./pages/profilePage";
 import signup from "./pages/signup";
 import login from "./pages/login";
 import AuthRoute from "./utils/AuthRoute";
@@ -22,7 +22,7 @@ import ProfilePage from "views/ProfilePage/ProfilePage";
 import LandingPage from "views/LandingPage/LandingPage";
 import jwtDecode from "jwt-decode";
 import dashboard from "./pages/dashboard";
-import axios from "axios";
+// import axios from "axios";
 
 // axios.defaults.baseURL =
 //   "https://us-central1-sandbox-356b4.cloudfunctions.net/api"; 

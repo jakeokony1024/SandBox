@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   StreamApp,
   NotificationDropdown,
@@ -10,19 +10,19 @@ import {
   StatusUpdateForm,
 } from "react-activity-feed";
 // nav bar
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-} from 'reactstrap';
+// import {
+//     Collapse,
+//     Navbar,
+//     NavbarToggler,
+//     NavbarBrand,
+//     Nav,
+//     NavItem,
+//     NavLink,
+//     UncontrolledDropdown,
+//     DropdownToggle,
+//     DropdownMenu,
+//     DropdownItem,
+// } from 'reactstrap';
 // col and row
 import { Container, Row, Col } from 'reactstrap';
 import GamesPage from "../pages/gamesPage"
@@ -35,8 +35,8 @@ import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(styles);
 const Example = (props) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
+    // const [isOpen, setIsOpen] = useState(false);
+    // const toggle = () => setIsOpen(!isOpen);
     const { ...rest } = props;
     const classes = useStyles();
     return (
@@ -59,6 +59,7 @@ const Example = (props) => {
                 <Col>
                 <br></br>
                 <UserInfo/></Col>
+                <Col><GamesPage/></Col>
                 <Col>
                 <StreamApp
                         apiKey={process.env.REACT_APP_CHAT_KEY}
@@ -88,53 +89,21 @@ const Example = (props) => {
                         />
                     </StreamApp>
                 </Col>
-                <Col><GamesPage/></Col>
             </Row>
         </Container>
         </div> 
         </div>
     );
 }
-const rows = (props) => {
-    return (
-        <Container>
-            <Row>
-                <Col>.Friends list displayed here. switch between chatting with them.</Col>
-                <Col>.Chat about whichever section you're in. game chat or friend</Col>
-                <Col>populate your favorite games here</Col>
-            </Row>
-        </Container>
-    );
-}
+// const rows = (props) => {
+//     return (
+//         <Container>
+//             <Row>
+//                 <Col>.Friends list displayed here. switch between chatting with them.</Col>
+//                 <Col>.Chat about whichever section you're in. game chat or friend</Col>
+//                 <Col>populate your favorite games here</Col>
+//             </Row>
+//         </Container>
+//     );
+// }
 export default Example;
-{/* <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">SandBox</NavbarBrand>
-                <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
-                        <NavItem>
-                            <NavLink href="/profilePage/">Profile</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                        </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                Options
-              </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>
-                                    Option 1
-                </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
-                </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    Reset
-                </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
-                    </Nav>
-                </Collapse>
-            </Navbar> */}

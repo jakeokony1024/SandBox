@@ -55,7 +55,7 @@ export default function LandingPage(props) {
                 From there you will be able to chat and add more friends.
               </h4>
               <br />
-              <Button
+              {/* <Button
                 color="danger"
                 margin="5px"
                 size="lg"
@@ -63,7 +63,7 @@ export default function LandingPage(props) {
                 rel="noopener noreferrer"
               >
                 Login Here
-              </Button>
+              </Button> */}
 
 
               <Button
