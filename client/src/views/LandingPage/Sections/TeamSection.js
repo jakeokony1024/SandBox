@@ -18,7 +18,7 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/team
 
 import team1 from "assets/img/faces/thomas.jpg";
 import team2 from "assets/img/faces/profilePic1.jpg";
-import team3 from "assets/img/faces/kendall.jpg";
+import team3 from "assets/img/faces/jose.jpg";
 
 const useStyles = makeStyles(styles);
 
@@ -132,10 +132,15 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
+                  An up and coming web developer who's willing to learn.
+                  Background consists of an apartment maintenance technician and
+                  a Bachelor's Degree in Computer Science.
+                  <br></br>
+                  <a href="https://www.linkedin.com/in/jose-mancha-96467b96">
+                    LinkedIn
+                  </a>
+                  <br></br>
+                  <a href="https://github.com/josemm83">GitHub</a>
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
