@@ -49,8 +49,10 @@ export default function TeamSection() {
                   As an aspiring web developer I enjoy the career I have now in SEO and can't wait to grab the future.
                   I love this project and everything it stands for. Solving a real world problem that I face myself & doing so
                   in a space that has such a big influence on my life.
-                  <a href="https://www.linkedin.com/in/thomasjhutch/"> 1. Checkout my linkedin </a>
-                  <a href="https://github.com/ThomasJHutch">2. View my Github</a>
+                  <br></br>
+                  <a href="https://www.linkedin.com/in/thomasjhutch/">LinkedIn</a>
+                  <br></br>
+                  <a href="https://github.com/ThomasJHutch">GitHub</a>
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -90,14 +92,14 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                Full Stack Developer familiar with web application architecture and design. 
-                Known as being thorough and concise.  Leveraging a background in 
-                restaurant management to achieve project goals and build strong 
-                relationships with clients and employees. 
+                  Full Stack Developer familiar with web application architecture and design.
+                  Known as being thorough and concise.  Leveraging a background in
+                  restaurant management to achieve project goals and build strong
+                  relationships with clients and employees.
                 <br></br>
-                <a href="https://www.linkedin.com/in/jacobokony/">LinkedIn</a>
-                <br></br>
-                <a href="https://github.com/jakeokony1024">GitHub</a>
+                  <a href="https://www.linkedin.com/in/jacobokony/">LinkedIn</a>
+                  <br></br>
+                  <a href="https://github.com/jakeokony1024">GitHub</a>
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
