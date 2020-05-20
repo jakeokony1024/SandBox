@@ -1,4 +1,4 @@
-### SandBox ###
+# SandBox #
 An application designed to streamline connection between video gamers based on similar interests and gaming styles. 
 
 ## Overview ##
@@ -13,13 +13,13 @@ Simply go to our [website](https://pure-earth-33980.herokuapp.com/), create an a
 games and add them to your favorites list. More games can be added, but please put your top 5 favorite games to 
 help us find the best connections for you. 
 
-# Getting Started #
+### Getting Started ###
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. It will also provide a demo overviewing the applications features and functionality. More information will be included once the application is completed.
 
-# Installing #
+### Installing ###
 Instructions on running a version locally will be included once the app is fully developed.
 
-# Demo #
+### Demo ###
 A demonstration video will be posted once the app is fully developed.
 
 Built With:
@@ -32,10 +32,10 @@ Built With:
 * Node.js
 * Material UI
 
-# Authors #
+### Authors ###
 You can view the authors of this site [here](https://github.com/jakeokony1024/SandBox/graphs/contributors)
 
-# Planned Next Steps #
+### Planned Next Steps ###
 
 This application is still a work in progress, and is not at minimum viable product status yet. 
 
